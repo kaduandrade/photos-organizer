@@ -18,18 +18,18 @@ public class FileProcessor {
 	private final static String slash = "\\";
 	private final static Map<Integer, String> meses = new HashMap<>();
 	static {
-		meses.put(0, "01");
-		meses.put(1, "02");
-		meses.put(2, "03");
-		meses.put(3, "04");
-		meses.put(4, "05");
-		meses.put(5, "06");
-		meses.put(6, "07");
-		meses.put(7, "08");
-		meses.put(8, "09");
-		meses.put(9, "10");
-		meses.put(10, "11");
-		meses.put(11, "12");
+		meses.put(Calendar.JANUARY, "01");
+		meses.put(Calendar.FEBRUARY, "02");
+		meses.put(Calendar.MARCH, "03");
+		meses.put(Calendar.APRIL, "04");
+		meses.put(Calendar.MAY, "05");
+		meses.put(Calendar.JUNE, "06");
+		meses.put(Calendar.JULY, "07");
+		meses.put(Calendar.AUGUST, "08");
+		meses.put(Calendar.SEPTEMBER, "09");
+		meses.put(Calendar.OCTOBER, "10");
+		meses.put(Calendar.NOVEMBER, "11");
+		meses.put(Calendar.DECEMBER, "12");
 	}
 
 	public static Date parseDate(String inputDate) {
@@ -82,11 +82,10 @@ public class FileProcessor {
 
 	public static String formatDate(Date date, String requiredDateFormat) {
 		SimpleDateFormat df = new SimpleDateFormat(requiredDateFormat);
-		String outputDateFormatted = df.format(date);
-		return outputDateFormatted;
+        return df.format(date);
 	}
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) {
 		parseDate("sexta fev 18 14:46:10 +00:00 2005");
 		parseDate("fev 18 14:46:10 +00:00 2005");
 		parseDate("18 14:46:10 +00:00 2005");
@@ -122,7 +121,7 @@ public class FileProcessor {
 		return cal;
 	}
 
-	public static void proccess(OptionsConfig optionsConfig) {
+	public static void process(OptionsConfig optionsConfig) {
 
 		File file = optionsConfig.getFile();
 		if (getFileType(optionsConfig) != null) {
@@ -153,7 +152,7 @@ public class FileProcessor {
 					.concat(minute)
 					.concat("."+extension);
 
-			StringBuffer targetFolderName = new StringBuffer();
+			StringBuilder targetFolderName = new StringBuilder();
 			targetFolderName
 					.append(optionsConfig.getTargetFolder())
 					.append(slash)
@@ -204,7 +203,7 @@ public class FileProcessor {
 		try (OutputStream out = new FileOutputStream(newPath)) {
 			Files.copy(sourceFile.toPath(), out);
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 

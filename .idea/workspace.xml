@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f736ff31-7a2e-4130-9e78-e46ff71b8ea1" name="Default Changelist" comment="" />
+    <list default="true" id="f736ff31-7a2e-4130-9e78-e46ff71b8ea1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kaduandrade/FileHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kaduandrade/MetadataExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhotosOrganizer.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaduandrade/FileProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaduandrade/FileProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaduandrade/FileTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaduandrade/FileTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaduandrade/PhotosOrganizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaduandrade/PhotosOrganizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kaduandrade/FileProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/kaduandrade/FileProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kaduandrade/FileTypes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/kaduandrade/FileTypes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kaduandrade/OptionsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/kaduandrade/OptionsConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kaduandrade/PhotosOrganizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/kaduandrade/PhotosOrganizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kaduandrade/FileProcessorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/kaduandrade/FileProcessorTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,27 +32,48 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
         <option value="JUnit3 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "kaduandrade"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/kaduandrade/photos-organizer.git",
+    "accountId": "db4c464a-e557-49cd-8852-b153abca1b0b"
+  }
+}]]></component>
   <component name="ProjectId" id="1neUq2Bwk78Boi0fWlYkkjcfEPk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.PhotosOrganizer.executor": "Run",
+    "JUnit.FileProcessorTest.testCopyWithDifferentName.executor": "Run",
+    "git-widget-placeholder": "teste",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
@@ -42,7 +82,7 @@
       <recent name="com.kaduandrade" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PhotosOrganizer">
+  <component name="RunManager" selected="JUnit.FileProcessorTest.testCopyWithDifferentName">
     <configuration name="FileProcessor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.kaduandrade.FileProcessor" />
       <module name="PhotosOrganizer" />
@@ -69,9 +109,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FileProcessorTest.testCopyWithDifferentName" />
         <item itemvalue="Application.PhotosOrganizer" />
         <item itemvalue="Application.FileProcessor" />
-        <item itemvalue="JUnit.FileProcessorTest.testCopyWithDifferentName" />
       </list>
     </recent_temporary>
   </component>
@@ -86,20 +126,49 @@
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/kaduandrade/FileProcessor.java</url>
-          <line>192</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/kaduandrade/FileProcessor.java</url>
-          <line>136</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="637f3daf-9a4b-40a7-9e62-2e4ca9e50cde" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="637f3daf-9a4b-40a7-9e62-2e4ca9e50cde">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="teste" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="teste" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -7,7 +7,9 @@ public enum FileTypes {
     JPEG("Joint Photographic Experts Group", "Imagens", ".jpeg"),
     PNG("Portable Network Graphics", "Imagens", ".png"),
     MOV("Portable Network Graphics", "Videos", ".mov"),
-    AVI("Portable Network Graphics", "Videos", ".avi");
+    AVI("Portable Network Graphics", "Videos", ".avi"),
+    PSD("Photoshop", "Imagens", ".psd");
+
 
     private final String description;
     private final String descriptionType;
