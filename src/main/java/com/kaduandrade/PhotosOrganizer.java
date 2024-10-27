@@ -1,81 +1,55 @@
 package com.kaduandrade;
 
+import com.drew.imaging.ImageProcessingException;
+
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.*;
-import java.util.stream.Collectors;
-
-import com.drew.imaging.ImageMetadataReader;
-import com.drew.imaging.ImageProcessingException;
-import com.drew.metadata.Directory;
-import com.drew.metadata.Metadata;
-import com.drew.metadata.Tag;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.List;
 
 public class PhotosOrganizer {
-	
-	private final static String sourceFolder = "C:\\temp\\tmp";
-	private final static String targetFolder = "C:\\Mídia";
-	private final static Path pathSourceFile = Paths.get(sourceFolder);
-	private final static List<FileTypes> filesAllowed = Arrays.asList(FileTypes.JPG, FileTypes.NEF, FileTypes.MOV, FileTypes.AVI);
 
-	/**
-	 * @param args
-	 * @throws ImageProcessingException
-	 */
+	private static final String SOURCE_FOLDER = "D:\\TESTE-JAVA\\tmp";
+	private static final String TARGET_FOLDER = "D:\\TESTE-JAVA\\target";
+
 	public static void main(String[] args) {
-
 		try {
-			
-			List<File> sourceFileList = Files.walk(pathSourceFile)
-                    .filter(Files::isRegularFile)
-                    .map(Path::toFile)
-                    .collect(Collectors.toList());
+			FileHandler fileHandler = new FileHandler(SOURCE_FOLDER);
+			MetadataExtractor metadataExtractor = new MetadataExtractor();
+			List<File> sourceFiles = fileHandler.getSourceFiles();
+			processFiles(sourceFiles, metadataExtractor);
+		} catch (ImageProcessingException | IOException e) {
+			logError(e);
+		}
+	}
 
-			for (File file : sourceFileList) {
-				List<Calendar> datesList = new ArrayList<>();
-				if (FileProcessor.getFileType(file) != null) {
-					addDatesToMetaData(file, datesList);
-					Collections.sort(datesList);
-					OptionsConfig copyFile = new OptionsConfig(
-							datesList.get(0),
-							file,
-							targetFolder,
-							false,
-							false,
-							filesAllowed);
-					FileProcessor.proccess(copyFile);
-                }
+	private static void processFiles(List<File> files, MetadataExtractor metadataExtractor)
+			throws ImageProcessingException, IOException {
+		for (File file : files) {
+			if (FileProcessor.getFileType(file) != null) {
+				List<Calendar> dates = metadataExtractor.extractDates(file);
+				if (!dates.isEmpty()) {
+					Collections.sort(dates);
+					processFile(file, dates.getFirst());
+				}
 			}
-		} catch (ImageProcessingException e) {
-            e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 
-	private static void addDatesToMetaData(File file, List<Calendar> dates) throws ImageProcessingException, IOException {
-		Metadata metadata = ImageMetadataReader.readMetadata(file);
-		for (Directory directory : metadata.getDirectories()) {
-            for (Tag tag : directory.getTags()) {
-                if (tag.getTagName().toLowerCase().contains("Date/Time Original".toLowerCase())) {
-                    dates.add(FileProcessor.getCalendar(tag));
-                }
-            }
-		}
-		if (dates.isEmpty()) {
-			addDatesToFile(file, dates);
-		}
+	private static void processFile(File file, Calendar date) {
+		OptionsConfig copyFile = new OptionsConfig(
+				date,
+				file,
+				TARGET_FOLDER,
+				false,
+				false,
+				FileHandler.getAllowedFileTypes()
+		);
+		FileProcessor.process(copyFile);
 	}
 
-	private static void addDatesToFile(File file, List<Calendar> dates) throws IOException {
-		Path filepath = Paths.get(file.getCanonicalPath());
-		BasicFileAttributes attr = Files.readAttributes(filepath, BasicFileAttributes.class);
-		dates.add(FileProcessor.getCalendar(attr.creationTime()));
-		dates.add(FileProcessor.getCalendar(attr.lastModifiedTime()));
+	private static void logError(Exception e) {
+		System.out.println(e.getMessage());
 	}
-
 }
